@@ -48,6 +48,7 @@ function win(turn, character) {
     [4, 5, 6],
     [1, 2, 3],
     [3, 5, 7],
+    [1, 5, 9]
   ];
 
   let letter = turn ? "o" : "x";
@@ -70,13 +71,12 @@ function win(turn, character) {
   }
 }
 
- const winner = document.createElement("div");
+const winner = document.createElement("div");
 function gameOver(letter) {
   gamestatus = 0;
 
   const player = letter == "x" ? "Player One" : "Player Two";
   const appendDiv = document.getElementById("result");
- 
 
   winner.innerHTML = ` <h1> ${player} Won</h1> `;
 
@@ -86,5 +86,6 @@ function gameOver(letter) {
 
 const resetButton = document.getElementById("reset");
 
-resetButton.addEventListener("click", ()=> {location.reload()});
-
+resetButton.addEventListener("click", () => {
+  location.reload();
+});
