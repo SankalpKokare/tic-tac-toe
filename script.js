@@ -20,7 +20,6 @@ function game() {
     write(element, i);
     win(i, element);
   }
-  
 }
 
 //draw x and o's
@@ -71,27 +70,21 @@ function win(turn, character) {
   }
 }
 
+ const winner = document.createElement("div");
 function gameOver(letter) {
   gamestatus = 0;
 
   const player = letter == "x" ? "Player One" : "Player Two";
   const appendDiv = document.getElementById("result");
-  const winner = document.createElement("div");
+ 
 
   winner.innerHTML = ` <h1> ${player} Won</h1> `;
 
   appendDiv.appendChild(winner);
+  return 1;
 }
 
 const resetButton = document.getElementById("reset");
 
-resetButton.addEventListener("click" , reset)
-function reset() {
-  
-  Array.from(cells).forEach((element) => {
+resetButton.addEventListener("click", ()=> {location.reload()});
 
-    element.innerHTML = "";
-    
-  })
-
-}
