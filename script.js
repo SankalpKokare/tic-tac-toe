@@ -82,3 +82,16 @@ function gameOver(letter) {
 
   appendDiv.appendChild(winner);
 }
+
+const resetButton = document.getElementById("reset");
+
+resetButton.addEventListener("click" , reset)
+function reset() {
+  
+  Array.from(cells).forEach((element) => {
+
+    element.innerHTML = "";
+    
+  })
+
+}
